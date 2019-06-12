@@ -1,0 +1,8 @@
+.display {
+    background-color: purple;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2.1em;
+    overflow: hidden;
+}
