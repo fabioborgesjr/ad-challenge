@@ -3,39 +3,27 @@ import '../utils/button/Button.css'
 import React, { Component } from 'react'
 import Axios from 'axios';
 
-const initialState = {
-    "numero_casas": 0,
-    "token": "98e5a51c7b425c92f4282fb7b9a0ac5333d7cf69",
-    "cifrado": "",
-    "decifrado": "",
-    "resumo_criptografico": ""
-}
-
 export default class GetJson extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
-        this.handleClick = this.handleClick.bind(this)
+        this.getJson = this.getJson.bind(this)
     }
 
-    state = { ...initialState }
+    state = { ...this.props.initial }
 
-    handleClick() {
-        const stateAux = { ...this.state }
-
-        Axios.get(`https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=${this.state.token}`).then(response => {
-            stateAux.cifrado = response.data.cifrado
-            stateAux.numero_casas = response.data.numero_casas
+    getJson() {
+        Axios.get(`https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=${this.state.token}`).then(response => {            
+            this.setState(response.data)    
+            this.props.update(this.state)
         })
-
-        this.setState(stateAux)
     }
 
     render() {
         return (
             <div className='button__container'>
-                <Button onClick={this.handleClick} value="Mostrar o cifrado"/>
+                <Button onClick={this.getJson} value="Mostrar o cifrado"/>
             </div>
         )
     }
