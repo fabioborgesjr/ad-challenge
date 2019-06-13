@@ -1,5 +1,6 @@
 .button__container {
-    margin: 10vh;
+    margin-block-start: 5vh;
+    margin-block-end: 5vh;
     text-align: center;
 }
 
@@ -7,6 +8,7 @@
     background-color:green;
     border: none;
     color: white;
+    align-items: center;
     font-size: 16px;
     height: 40px;
     width: 200px;
