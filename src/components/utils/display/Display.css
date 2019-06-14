@@ -3,11 +3,13 @@
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     overflow: hidden;
+    padding: 1.5vh;
     margin-inline-start: 50vh;
     margin-inline-end: 50vh;
-    padding-inline-start: 10vh;
-    padding-inline-end: 10vh;
+}
+
+.display > p {
+    margin: 2vh;
 }
