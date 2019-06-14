@@ -1,8 +1,7 @@
 import React from 'react'
-import '../button/Button.css'
 
 export default props => (
-    <button className='button' onClick={props.onClick}>
+    <button id={props.id} className={`${props.id === "cifrado" ? "btn btn-light" : "btn btn-dark"}`} onClick={props.onClick}>
         {props.value}
     </button>
 )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Display from '../components/utils/display/Display';
-import GetJson from '../components/json/GetJson';
+import Actions from '../components/json/Actions';
 import Intro from '../components/intro/Intro';
 
 const initialState = {
@@ -24,8 +24,6 @@ class App extends Component {
 
   update(obj) {
     this.setState(obj);
-
-    console.log(this.state)
   }
 
   render() {
@@ -33,8 +31,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">Criptografia de Júlio César</header>
         <Intro />
-        <GetJson initial={this.state} update={this.update} />
-        <Display value={this.state.cifrado === "" ? `Clique no botão "Mostrar o cifrado" para exibi-lo.` : this.state.cifrado} />
+        <div className="btn-group">
+          <Actions id="cifrado" value="Mostrar o valor cifrado" initial={this.state} update={this.update} />
+          <Actions id="decifrado" value="Mostrar o valor decifrado" initial={this.state} update={this.update} />
+        </div>
+        <Display value={this.state.cifrado === "" ? `Clique no botão "Mostrar o cifrado" para exibir o valor a ser decifrado.` : this.state.cifrado} />
       </div>
     )
   }
