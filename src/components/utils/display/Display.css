@@ -4,12 +4,10 @@
     display: flex;
     justify-content: center;
     font-size: 1.3em;
-    overflow: hidden;
-    padding: 1.5vh;
-    margin-inline-start: 50vh;
-    margin-inline-end: 50vh;
 }
 
 .display > p {
-    margin: 2vh;
+    margin: 10vh;
+    overflow: hidden;
+
 }
