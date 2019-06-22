@@ -57,7 +57,7 @@ export default class Actions extends Component {
                 } else {
                     for (let j = 0; j < alphabet.length; j++) {
                         if (alphabet[j] === cifrado.charAt(i)) {
-                            criptografia.decifrado += alphabet[j + criptografia.numero_casas]
+                            criptografia.decifrado += alphabet[j - criptografia.numero_casas]
                         }
                     }
                 }
