@@ -9,7 +9,7 @@ import Axios from 'axios';
 
 const initialState = {
   numero_casas: 2,
-  token: "98e5a51c7b425c92f4282fb7b9a0ac5333d7cf69",
+  token: "",
   cifrado: "vjg kpvgtpgv? ku vjcv vjkpi uvknn ctqwpf? jqogt ukoruqp",
   decifrado: "",
   resumo_criptografico: ""
